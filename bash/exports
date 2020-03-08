@@ -11,6 +11,7 @@ export PATH="$PATH:$HOME/Library/Python/3.7/bin"
 export PATH="$PATH:$HOME/Library/Python/2.7/bin"
 
 export INPUTRC="$XDG_CONFIG_HOME/bash/inputrc"
+export ANSIBLE_CONFIG="$XDG_CONFIG_HOME/ansible/config"
 
 export HOMEBREW_GITHUB_API_TOKEN="yourtokenhere"
 
