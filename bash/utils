@@ -1,0 +1,5 @@
+# https://github.com/rupa/z
+# Must be loaded _after_ setting PROMPT_COMMAND
+if [ -f "/usr/local/etc/profile.d/z.sh" ]; then
+  . "/usr/local/etc/profile.d/z.sh"
+fi

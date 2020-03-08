@@ -1,0 +1,40 @@
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+source "$XDG_CONFIG_HOME/bash/completion"
+source "$XDG_CONFIG_HOME/bash/aliases"
+source "$XDG_CONFIG_HOME/bash/utils"
+
+# Bash settings
+shopt -s cdspell        # Auto-corrects cd misspellings
+shopt -s checkwinsize   # Update the value of LINES and COLUMNS after each command if altered
+shopt -s cmdhist        # Save multi-line commands in history as single line
+shopt -s dotglob        # Include dotfiles in pathname expansion
+shopt -s expand_aliases # Expand aliases
+shopt -s extglob        # Enable extended pattern-matching features
+shopt -s histreedit     # Add failed commands to the bash history
+shopt -s histappend     # Append each session's history to $HISTFILE
+shopt -s histverify     # Edit a recalled history line before executing
+
+export HISTSIZE=30000
+export HISTFILESIZE=1500000
+export HISTTIMEFORMAT='[%F %T] '
+export HISTIGNORE='pwd:jobs:ll:ls:l:fg:history:clear:exit'
+export HISTCONTROL=ignoreboth
+export HISTFILE="$XDG_CACHE_HOME/bash_history"
+export VISUAL=vim
+export EDITOR="$VISUAL"
+export PAGER=less
+export TF_LOG=DEBUG
+
+# Load directory and file colors for GNU ls
+eval "$(dircolors -b "$XDG_CONFIG_HOME/bash/dircolors")"
+source /usr/local/opt/kube-ps1/share/kube-ps1.sh
+PS1='[\u@\h \W $(kube_ps1)]\$ '
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[ -f /Users/sergeiolshanetski/git/digital-nodejs-services/node_modules/tabtab/.completions/serverless.bash ] && . /Users/sergeiolshanetski/git/digital-nodejs-services/node_modules/tabtab/.completions/serverless.bash
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[ -f /Users/sergeiolshanetski/git/digital-nodejs-services/node_modules/tabtab/.completions/sls.bash ] && . /Users/sergeiolshanetski/git/digital-nodejs-services/node_modules/tabtab/.completions/sls.bash

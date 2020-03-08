@@ -1,0 +1,26 @@
+# XDG directories
+export XDG_CONFIG_HOME="$HOME/.config"
+export  XDG_CACHE_HOME="$HOME/.cache"
+export   XDG_DATA_HOME="$HOME/.local/share"
+
+# Local bin
+export PATH="$HOME/.local/bin:$PATH:bin"
+
+# Python per user site-packages directory
+export PATH="$PATH:$HOME/Library/Python/3.7/bin"
+export PATH="$PATH:$HOME/Library/Python/2.7/bin"
+
+export INPUTRC="$XDG_CONFIG_HOME/bash/inputrc"
+
+export HOMEBREW_GITHUB_API_TOKEN="yourtokenhere"
+
+# Misc defaults
+export LESS="-FiQMXR"
+export LESSCHARSET="UTF-8"
+
+# GO configuration
+if hash go 2>/dev/null
+then
+    export GOPATH="$HOME/git/go"
+    export PATH="$PATH:$GOPATH/bin"
+fi

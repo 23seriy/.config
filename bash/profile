@@ -1,0 +1,8 @@
+source "$HOME/.config/bash/exports"
+source "$XDG_CONFIG_HOME/bash/bashrc"
+
+if hash keychain 2>/dev/null; then
+  eval `keychain --eval --agents ssh --inherit any --quiet id_rsa`
+fi
+export PATH="/usr/local/opt/node@8/bin:$PATH"
+export HOMEBREW_GITHUB_API_TOKEN=4f0856b4d19ad66e79ff2299db6527b749599321
